@@ -4,12 +4,14 @@ import sys
 
 from game_objects import *
 
+pg.display.set_caption("Classic Snake Game")
+
 
 class Game:
     def __init__(self):
         pg.init()
-        self.WINDOW_SIZE = 1000
-        self.TITLE_SIZE = 50
+        self.WINDOW_SIZE = 600
+        self.TITLE_SIZE = 20
         self.screen = pg.display.set_mode([self.WINDOW_SIZE] * 2)
         self.clock = pg.time.Clock()
         self.new_game()
@@ -50,6 +52,17 @@ class Game:
             self.draw()
 
 
-if __name__ == '__main__':
+
+
+print('Do you wanna play a game? (Y / N)')
+answer = input()
+
+if answer == 'Y':
     game = Game()
     game.run()
+elif answer == 'N':
+    print('I see... Have a good day')
+    input('Press Enter to end script.')
+else:
+    print('Hmmm.. Invalid answer, do you wanna play a game? (Y / N)')
+    answer = input()
