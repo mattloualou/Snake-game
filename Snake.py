@@ -40,6 +40,8 @@ class Game:
             if event.type == pg.QUIT:
                 pg.quit()
                 sys.exit()
+            # controlling THE snake
+            self.snake.control(event)
 
     def run(self):
         while True:
